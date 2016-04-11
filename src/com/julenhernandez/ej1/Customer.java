@@ -63,4 +63,24 @@ class Customer {
 		return aRental.getCharge();
 	}
 
+	private int getTotalFrequentRenterPoints(){
+		 int result = 0;
+		 Enumeration rentals = _rentals.elements();
+		 while (rentals.hasMoreElements()) {
+		 Rental each = (Rental) rentals.nextElement();
+		 result += each.getFrequentRenterPoints();
+		 }
+		 return result;
+		 }
+	
+	private double getTotalCharge() {
+		 double result = 0;
+		 Enumeration rentals = _rentals.elements();
+		 while (rentals.hasMoreElements()) {
+		 Rental each = (Rental) rentals.nextElement();
+		 result += each.getCharge();
+		 }
+		 return result;
+		 }
+	
 }
